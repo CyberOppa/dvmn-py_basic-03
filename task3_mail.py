@@ -49,7 +49,7 @@ letter = letter.encode("UTF-8")
 # replaced text
 new_text = text.replace("%friend_name%", friend_name).replace("%my_name%", my_name).replace("%website%", dvmn_akt)
 
-# total massege
+# total message
 message = letter + new_text.encode("UTF-8")
 
 # server access, massage sent und quit
