@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 load_dotenv('var.env')
 
 # secret dotenv variables
-login = os.getenv("user")
-password = os.getenv("pass")
+login = os.getenv("USER")
+password = os.getenv("PASS")
 
 # variables
 email_from = "cyberopa@mein.gmx"
@@ -18,7 +18,7 @@ friend_name = "Viktor"
 dvmn_akt = "https://dvmn.org/profession-ref-program/paul-r6/BM3Ra/"
 
 # Source text
-text = ('''Привет, %friend_name%!
+text = '''Привет, %friend_name%!
 
 %my_name% приглашает тебя на сайт %website%!
 
@@ -35,7 +35,7 @@ text = ('''Привет, %friend_name%!
 Все проекты — они же решение наших задачек — можно разместить на твоём GitHub. Работодатели такое оценят.
 
 Регистрируйся → %website%
-На курсы, которые еще не вышли, можно подписаться и получить уведомление о релизе сразу на имейл.''')
+На курсы, которые еще не вышли, можно подписаться и получить уведомление о релизе сразу на имейл.'''
 
 # Postkarte
 letter = f'''From: {email_from}
@@ -57,6 +57,3 @@ server = smtplib.SMTP_SSL('mail.gmx.net', 465)
 server.login(login, password)
 server.sendmail(email_from, email_to, message)
 server.quit()
-
-# sucsess response
-print(f"E-Mail from {email_from} sent to {email_to}!")
